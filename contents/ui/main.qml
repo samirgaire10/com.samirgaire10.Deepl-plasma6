@@ -74,6 +74,21 @@ PlasmoidItem {
 
                 readonly property bool useMinViewWidth : plasmoid.configuration.useMinViewWidth
 
+
+
+  WebEngineProfile {
+            id: deeplProfile
+            httpUserAgent: getUserAgent()
+            storageName: "deepl"
+            offTheRecord: false
+            httpCacheType: WebEngineProfile.DiskHttpCache
+            persistentCookiesPolicy: WebEngineProfile.ForcePersistentCookies
+        }
+
+        profile: deeplProfile
+
+
+
                 Connections {
                     target: plasmoid.configuration
 
